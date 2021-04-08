@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Weather App</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <br>
+
+    <form action="/temp" method="POST">
+        <div class="input-group mb-4">
+            <input type="text" class="form-control" placeholder="Enter a city..." name="city" id="city">
+            <div class="input-group-append">
+                <button class="btn btn-success" id="inputGroup-sizing-lg submit" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <br>
+
+    <main role="main">
+        <div class="jumbotron">
+            <div class="col-sm-4 mx-auto">
+            </div>
+        </div>
+    </main>
+
+</div>
+
+{% endblock %}

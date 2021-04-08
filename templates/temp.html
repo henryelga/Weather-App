@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Weather App</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <br>
+
+    <form action="/temp", method="POST">
+        <div class="input-group mb-4">
+            <input type="text" class="form-control" placeholder="Enter a city..." name="city" id="city">
+            <div class="input-group-append">
+                <button class="btn btn-success" id="inputGroup-sizing-lg submit" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <br>
+
+    <main role="main">
+        <div class="jumbotron">
+            <div class="col-sm-4 mx-auto">
+                <div class="card" style="width: 18rem auto;">
+                    <br>
+                    <img class="card-img-top col-sm-4 mx-auto" src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png"
+                        alt="icon">
+                    <br><br>
+                    <div class="card-body" style="text-align: left;">
+                        <h5 class="card-title" style="text-transform: capitalize;">City : {{ weather.city }}</h5><br>
+                        <h5 class="card-title">Temperature : {{ weather.temp }} °C</h5><br>
+                        <h5 class="card-title" style="text-transform: capitalize;">Description : {{ weather.desc }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+{% endblock %}
